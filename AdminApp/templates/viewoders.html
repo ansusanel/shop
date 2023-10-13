@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block content %}
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>SI NO</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Name</th>   
+        <th>Email</th>
+        <th>Number </th>       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          {% for i in data %}            
+          <td>
+              {{i.id}}
+          </td>
+          <td>
+              {{i.ProductName}}
+          </td>              
+          <td>
+             {{i.ProductPrice}}
+          </td> 
+          <td>
+            {{i.Name}} 
+          </td>  
+          <td>
+            {{i.Email}} 
+          </td>
+          <td>
+            {{i.Number}} 
+          </td>                                   
+      </tr>  
+      {% endfor %}
+     </tbody>
+  </table>    
+  
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="col-lg-10 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Table with Products with Categories</h4>
+        <p class="card-description">
+          
+        </p>
+        <div class="table-responsive pt-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>
+                  SI NO
+                </th>
+                <th>
+                  Category Name
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    image
+                </th>
+                <th>
+                    Product Descrition
+                </th>
+                <th>
+                    Product Price
+                </th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-info">
+                {% for i in data %}
+                <td>
+                {{forloop.counter }}
+                </td>
+                <td>
+                  {{i.CategoryName}}
+                </td>
+                <td>
+                    {{i.ProductName}}
+                  </td>
+                <td>
+                <img src="{{ i.image.url }}" style="height: 50px;width: 50px;">                   
+                </td>
+                <td>
+                 {{i.ProductDescrition}}
+                </td>
+                <td>
+                    {{i.ProductPrice}}
+                </td>
+                <td>   
+                  <a href="{% url 'editprod' i.id %}"> 
+                      <button >
+                          Edit
+                      </button>
+                  </a>
+                  </td>
+                  <td>   
+                  <a href="deleteprod/{{ i.id }}" >                 
+                      <button>Delete</button>
+                  </a>
+                  </td>              
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

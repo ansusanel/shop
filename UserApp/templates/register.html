@@ -1,0 +1,32 @@
+{% extends 'userindex.html' %}
+{% block content %}
+
+<div class="contact-from-section mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="form-title">
+                    <h2>Register Here</h2>
+                    
+                </div>
+                 <div id="form_status"></div>
+                <div class="contact-form">
+                    <form action="{% url 'Registrationdata' %}" method="POST">
+                        {% csrf_token %}
+                        <p>
+                            <input type="text" placeholder="Name" name="name" id="name">
+                        </p>
+                            <p>
+                                <input type="email" placeholder="Email" name="email" id="email">
+                            </p>                           
+                       
+                        <p>
+                            <input type="password" placeholder="Password" name="password" id="password">                            
+                        
+                        <p><input type="submit" value="Register"></p>
+                    </form>
+                </div>
+            </div>
+
+
+{% endblock %}

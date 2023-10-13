@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block content %}
+<!-- partial -->
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Add New Products</h4>
+              <p class="card-description">
+                
+              </p>
+              <form class="forms-sample"action="{% url 'categorydata' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="CategoryName">Category Name</label>
+                  <input type="text" name="CategoryName" class="form-control" id="CategoryName" placeholder="CategoryName">
+                </div>
+                <div class="form-group">
+                    <label> Add Image</label>
+                    <input type="file" name="image">
+                </div>
+                <div class="form-group">
+                  <label for="CategoryDescription">Category Description</label>
+                  <input type="text" name="CategoryDescription"class="form-control" id="CategoryDescription" placeholder="CategoryDescription">
+                </div>                
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-primary mr-2">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}

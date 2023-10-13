@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block content %}
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>SI NO</th>
+        <th>User Name</th>
+        <th>User Email</th>
+        <th>Password</th>          
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          {% for i in data %}            
+          <td>
+              {{i.id}}
+          </td>
+          <td>
+              {{i.UserName}}
+          </td>              
+          <td>
+             {{i.Email}}
+          </td> 
+          <td>
+            {{i.Password}} 
+          </td>  
+                                              
+      </tr>  
+      {% endfor %}
+     </tbody>
+  </table>    
+{% endblock %}
